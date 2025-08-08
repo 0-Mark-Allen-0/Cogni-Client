@@ -114,6 +114,9 @@ const OurValues: React.FC = () => {
     <div className="flex flex-col gap-16 px-6 md:px-12 py-12 bg-gradient-to-br from-[#07ECC6]/10 to-[#28A0E3]/10">
       <div className="text-center p-6">
         <h2 className="text-5xl font-bold mb-4 text-gray-800">Our Values</h2>
+        <p className="text-xl text-gray-800 max-w-3xl mx-auto">
+          Our foundations are deeply rooted in these core values
+        </p>
       </div>
       {sections.map((section, index) => {
         const isEven = index % 2 === 0;
