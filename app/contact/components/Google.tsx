@@ -38,15 +38,14 @@ export default function Google() {
         </div>
 
         {/* Contact Content */}
-        <div className="container mx-auto px-6 relative z-10">
-          <h1 className="text-4xl font-bold text-white mb-4 pt-4">
+        <div className="container mx-auto px-6 relative z-10 pt-6">
+          {/* <h1 className="text-4xl font-semibold text-white mb-4 pt-4">
             Contact Us
-          </h1>
-          <p className="text-gray-200">Get in touch with our team</p>
+          </h1> */}
         </div>
       </section>
 
-      <section className="py-16">
+      <section className="py-16 max-w-7xl justify-center mx-auto">
         <div className="container mx-auto px-6">
           <div className="grid md:grid-cols-2 gap-12">
             <div>

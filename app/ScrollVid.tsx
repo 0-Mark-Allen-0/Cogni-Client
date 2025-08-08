@@ -423,6 +423,7 @@
 //   );
 // }
 
+//v2.
 "use client";
 
 import type React from "react";
@@ -680,7 +681,9 @@ export default function VRHeadsetViewer() {
               <span className="hidden md:inline">
                 Scroll to begin your journey
               </span>
-              <span className="md:hidden">Touch to begin your journey</span>
+              <span className="md:hidden">
+                Rotate your phone to landscape, and touch the screen!
+              </span>
             </p>
             <div className="animate-bounce">
               <svg
@@ -704,14 +707,14 @@ export default function VRHeadsetViewer() {
         <div className="absolute inset-0 z-10 flex items-center justify-center bg-black">
           <video
             ref={videoRef}
-            src="/videos/sample.mp4"
+            src="/videos/landing_video.mp4"
             autoPlay
             loop
             muted
             playsInline
             className={`${
               isMobile
-                ? "w-full h-full object-contain" // Fit entire video on mobile
+                ? "w-full h-full object-cover" // Fit entire video on mobile
                 : "w-full h-full object-cover" // Cover full screen on desktop
             }`}
           />

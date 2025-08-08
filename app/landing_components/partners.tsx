@@ -11,9 +11,9 @@ const PARTNER_LOGOS = [
 
 const OurPartners = () => {
   return (
-    <section className="bg-white py-24 px-8">
+    <section className="bg-white py-12 px-8">
       <div className="text-center pb-12">
-        <h2 className="text-6xl font-bold text-gray-800 mb-4">Our Partners</h2>
+        <h2 className="text-5xl font-bold text-gray-800 mb-4">Our Partners</h2>
         <p className="text-lg text-gray-600 max-w-2xl mx-auto">
           Built with and backed by leaders in healthcare
         </p>

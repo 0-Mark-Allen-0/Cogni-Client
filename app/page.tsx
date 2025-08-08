@@ -64,6 +64,8 @@ import Mission from "./landing_components/mission";
 import OurValues from "./landing_components/values_v2";
 import OurPartners from "./landing_components/partners";
 import Solutions from "./landing_components/solutions";
+import AboutUs from "./landing_components/AboutUs";
+import WhyChooseVr from "./landing_components/why_choose_vr";
 
 export default function Home() {
   return (
@@ -100,17 +102,21 @@ export default function Home() {
         <ScrollVid />
       </section>
 
+      {/* Solutions Section */}
+      <Solutions />
+
       {/* Mission Section */}
       <Mission />
 
+      <WhyChooseVr />
+
       {/* Values Section */}
-      <OurValues />
+      {/* <OurValues /> */}
 
       {/* Partners Section */}
       <OurPartners />
 
-      {/* Solutions Section */}
-      <Solutions />
+      {/* <AboutUs /> */}
     </main>
   );
 }
