@@ -111,7 +111,7 @@ export default function Home() {
       <WhyChooseVr />
 
       {/* Values Section */}
-      {/* <OurValues /> */}
+      <OurValues />
 
       {/* Partners Section */}
       <OurPartners />

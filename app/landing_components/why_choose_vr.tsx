@@ -4,7 +4,7 @@ import { Clock, BarChart2, Brain, Globe } from "lucide-react";
 const WhyChooseVr = () => {
   return (
     <div>
-      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-[#07ECC6]/10 to-[#28A0E3]/10">
+      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-[radial-gradient(circle_at_top_right,_var(--tw-gradient-stops))] from-green-50 via-white to-white">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-5xl font-bold text-gray-900 mb-4">

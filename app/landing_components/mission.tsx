@@ -130,7 +130,7 @@ const Mission = () => {
       <section className="py-20 bg-white relative overflow-hidden">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,_var(--tw-gradient-stops))] from-green-50 via-white to-white"></div>
         <div className="container mx-auto px-6 relative max-w-7xl">
-          <div className="grid md:grid-cols-2 gap-12">
+          <div className="grid md:grid-cols-2 gap-24">
             {/* Our Vision Section */}
             <div>
               <div className="text-center mb-12">

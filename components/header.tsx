@@ -12,8 +12,14 @@ export default function Header() {
     <header className="fixed top-4 left-0 w-full z-50 px-4">
       <div className="w-full max-w-7xl mx-auto bg-gradient-to-br from-[#07ECC6]/75 via-[#24ccff]/75 to-[#28A0E3]/75 backdrop-blur-md shadow-lg rounded-2xl px-6 py-3">
         <nav className="flex items-center justify-between">
-          <Link href="/" className="text-2xl font-bold text-white">
-            CogniVerse
+          <Link href="/" className="flex items-center">
+            <div className="bg-white/50 rounded-md p-1">
+              <img
+                src="/cogni-logo.png" // <-- Replace with your actual image path
+                alt="CogniVerse Logo"
+                className="h-10 w-auto"
+              />
+            </div>
           </Link>
 
           {/* Desktop Navigation */}
@@ -54,12 +60,12 @@ export default function Header() {
                   >
                     Team
                   </Link>
-                  <Link
+                  {/* <Link
                     href="/about_us/technology"
                     className="block px-4 py-2 text-gray-200 hover:bg-[#00a8c9] hover:text-white font-semibold"
                   >
                     Technology
-                  </Link>
+                  </Link> */}
                 </div>
               )}
             </div>

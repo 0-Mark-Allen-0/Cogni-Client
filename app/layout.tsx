@@ -10,6 +10,9 @@ export const metadata: Metadata = {
   title: "CogniVerse - Transforming Ideas into Intelligent Solutions",
   description:
     "Cogniverse bridges the gap between human creativity and artificial intelligence, creating solutions that shape the future of technology.",
+  icons: {
+    icon: "/cogni-tab.jpg",
+  },
 };
 
 export default function RootLayout({
