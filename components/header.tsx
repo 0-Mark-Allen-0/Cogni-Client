@@ -32,7 +32,7 @@ export default function Header() {
             </Link>
 
             {/* About Us Dropdown */}
-            <div
+            {/* <div
               className="relative"
               onMouseLeave={() => setIsAboutOpen(false)}
             >
@@ -60,15 +60,15 @@ export default function Header() {
                   >
                     Team
                   </Link>
-                  {/* <Link
+                  <Link
                     href="/about_us/technology"
                     className="block px-4 py-2 text-gray-200 hover:bg-[#00a8c9] hover:text-white font-semibold"
                   >
                     Technology
-                  </Link> */}
+                  </Link>
                 </div>
               )}
-            </div>
+            </div> */}
 
             <Link
               href="/contact"
@@ -103,7 +103,7 @@ export default function Header() {
             </Link>
 
             {/* Mobile About Us Dropdown */}
-            <div className="relative">
+            {/* <div className="relative">
               <button
                 className="flex items-center justify-center w-full text-gray-200 hover:text-white font-semibold"
                 onClick={() => setIsAboutOpen(!isAboutOpen)}
@@ -140,7 +140,7 @@ export default function Header() {
                   </Link>
                 </div>
               )}
-            </div>
+            </div> */}
 
             <Link
               href="/contact"

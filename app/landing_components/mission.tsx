@@ -91,7 +91,7 @@ const Mission = () => {
     {
       title: "Innovation Hub",
       description:
-        "To continuously innovate with AI and VR, creating intelligent, adaptive learning environments that evolve with medical science.",
+        "To continuously innovate with AI and VR, creating intelligent, adaptive products that evolve with medical science.",
       icon: Zap,
       iconBg: "bg-fuchsia-100",
       iconColor: "text-fuchsia-500",
@@ -130,7 +130,7 @@ const Mission = () => {
       <section className="py-20 bg-white relative overflow-hidden">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,_var(--tw-gradient-stops))] from-green-50 via-white to-white"></div>
         <div className="container mx-auto px-6 relative max-w-7xl">
-          <div className="grid md:grid-cols-2 gap-24">
+          <div className="grid md:grid-cols-2 gap-32">
             {/* Our Vision Section */}
             <div>
               <div className="text-center mb-12">
