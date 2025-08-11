@@ -75,7 +75,7 @@ const Mission = () => {
     {
       title: "Visionary Training",
       description:
-        "To be the global leader in VR medical education, setting new standards for immersive and effective healthcare training.",
+        "Setting new standards for immersive and effective healthcare training.",
       icon: Eye,
       iconBg: "bg-sky-100",
       iconColor: "text-sky-500",
@@ -83,7 +83,7 @@ const Mission = () => {
     {
       title: "Global Impact",
       description:
-        "To expand access to high-fidelity medical simulations, empowering professionals in every corner of the world.",
+        "Expand access to high-fidelity medical simulations, empowering professionals.",
       icon: Rocket,
       iconBg: "bg-indigo-100",
       iconColor: "text-indigo-500",
@@ -91,7 +91,7 @@ const Mission = () => {
     {
       title: "Innovation Hub",
       description:
-        "To continuously innovate with AI and VR, creating intelligent, adaptive products that evolve with medical science.",
+        "Continuously innovate with AI and VR, creating intelligent, and adaptive products",
       icon: Zap,
       iconBg: "bg-fuchsia-100",
       iconColor: "text-fuchsia-500",
@@ -145,7 +145,8 @@ const Mission = () => {
                   ensuring confidence and competence in every procedure.
                 </p> */}
               </div>
-              <div className="flex flex-col gap-8">
+              <div className="grid gap-8 auto-rows-fr">
+                {/* Old class: flex flex-col gap-8  */}
                 {visionCards.map((card, index) => {
                   const Icon = card.icon;
                   return (
@@ -183,7 +184,8 @@ const Mission = () => {
                   tailored for healthcare professionals.
                 </p> */}
               </div>
-              <div className="flex flex-col gap-8">
+              <div className="grid gap-8 auto-rows-fr">
+                {/* Old class: flex flex-col gap-8 */}
                 {missionCards.map((card, index) => {
                   const Icon = card.icon;
                   return (
