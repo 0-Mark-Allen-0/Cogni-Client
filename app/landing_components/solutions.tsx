@@ -322,7 +322,7 @@ const FEATURES = [
   {
     title: "VR Surgical Training",
     description:
-      "Experience clinical environments such as operating theatres, built using validated medical protocols. Used by nurses, surgeons, and educators to reinforce decision-making and procedure flow.",
+      "Step into immersive operating theatres, built to match medical protocols. Used by nurses, surgeons, and educators to practice decision-making and procedure flow.",
     imageSrc: "/VR training.png",
     bg: "bg-white",
     span: "md:col-start-1 md:col-end-3 md:row-start-1 md:row-end-2",
@@ -330,16 +330,16 @@ const FEATURES = [
   {
     title: "HalaraXR",
     description:
-      "Access calming, intelligent virtual worlds tailored to the emotional and sensory needs of autistic and ADHD children. Cogniverse integrates the Halara platform to extend care beyond clinics.",
+      "Calm, interactive VR experiences that help identify and understand neurodivergent needs in children.",
     icon: ComputerIcon,
     image: "/hala-1.jpg",
     bg: "bg-white",
     span: "md:col-start-3 md:col-end-4 md:row-start-1 md:row-end-3",
   },
   {
-    title: "AI-Powered Avatar Assistant",
+    title: "AI-Powered Learning in VR",
     description:
-      "Simulations are guided by an intelligent in-VR avatar that assists users throughout training—providing real-time prompts, procedural cues, and support to reinforce learning.",
+      "An in-VR conversational avatar supports trainees with prompts, cues, and guidance—helping reinforce every step of the process.",
     imageSrc: "/ai-assistant.png",
     bg: "bg-white",
     span: "md:col-start-1 md:col-end-2 md:row-start-3 md:row-end-4",
@@ -347,15 +347,15 @@ const FEATURES = [
   {
     title: "Real-Time Monitoring & Feedback",
     description:
-      "Every session includes real-time tracking of user actions and decisions. Trainers and learners receive detailed feedback reports to improve performance and retention through measurable insights.",
+      "Actions and decisions tracked during training, providing feedback that helps learners improve and practitioners track growth.",
     imageSrc: "/Realtime monitoring.png",
     bg: "bg-white",
     span: "md:col-start-2 md:col-end-4 md:row-start-3 md:row-end-4",
   },
   {
-    title: "Coming Soon",
+    title: "What's Next",
     description:
-      "Exciting new features are in development to take VR-based learning even further. Stay tuned for next-generation tools that deepen realism and expand impact.",
+      "We’re constantly developing new features to make our VR modules more realistic and impactful. Updates coming soon. Please come back here for more updates!",
     icon: Clock3,
     bg: "bg-white",
     span: "md:col-start-1 md:col-end-4 md:row-start-4 md:row-end-5",
@@ -368,8 +368,7 @@ const Solutions = () => {
       <div className="text-center mb-16">
         <h2 className="text-5xl font-bold mb-4">What We Do</h2>
         <p className="text-lg max-w-2xl mx-auto">
-          Empowering medical professionals with cutting-edge virtual reality
-          technology
+          Creating VR tools to empower medical teams for learning and growing
         </p>
       </div>
 

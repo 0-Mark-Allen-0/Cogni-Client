@@ -68,30 +68,41 @@
 
 //v2
 import React from "react";
-import { Users, BrainCircuit, Computer, Eye, Rocket, Zap } from "lucide-react";
+import {
+  Users,
+  BrainCircuit,
+  Computer,
+  Eye,
+  Rocket,
+  Zap,
+  TrendingUp,
+  Fullscreen,
+  BrainCog,
+  Earth,
+} from "lucide-react";
 
 const Mission = () => {
   const visionCards = [
     {
-      title: "Visionary Training",
+      title: "Raising Training Standards",
       description:
-        "Setting new standards for immersive and effective healthcare training.",
-      icon: Eye,
+        "To create immersive, accurate, and effective learning experiences for practitioners.",
+      icon: TrendingUp,
       iconBg: "bg-sky-100",
       iconColor: "text-sky-500",
     },
     {
-      title: "Global Impact",
+      title: "Expanding Access and Impact",
       description:
-        "Expand access to high-fidelity medical simulations, empowering professionals.",
-      icon: Rocket,
+        "To make high-quality simulations available across regions and communities.",
+      icon: Fullscreen,
       iconBg: "bg-indigo-100",
       iconColor: "text-indigo-500",
     },
     {
-      title: "Innovation Hub",
+      title: "Driving Innovation",
       description:
-        "Continuously innovate with AI and VR, creating intelligent, and adaptive products",
+        "To continuously explore new ways AI and VR can enhance medical training.",
       icon: Zap,
       iconBg: "bg-fuchsia-100",
       iconColor: "text-fuchsia-500",
@@ -100,25 +111,25 @@ const Mission = () => {
 
   const missionCards = [
     {
-      title: "Virtual Reality",
+      title: "Harnessing VR",
       description:
-        "To harness the power of Virtual Reality (VR) to redefine medical training.",
-      icon: Computer,
+        "To use the power of virtual reality to give medical teams a practical and safe way to train.",
+      icon: BrainCog,
       iconBg: "bg-emerald-100",
       iconColor: "text-emerald-500",
     },
     {
-      title: "Accessibility",
+      title: "Making Learning Accessible",
       description:
-        "To make high-quality, hands-on learning accessible to healthcare professionals worldwide.",
-      icon: Users,
+        "To design training that can be used anytime, anywhere, by professionals worldwide.",
+      icon: Earth,
       iconBg: "bg-amber-100",
       iconColor: "text-amber-500",
     },
     {
-      title: "AI-Driven",
+      title: "Advancing with AI",
       description:
-        "To develop cutting-edge, AI-driven VR simulations that improve patient care and safety.",
+        "To integrate AI into our tools to improve patient care and safely personalise learning.",
       icon: BrainCircuit,
       iconBg: "bg-rose-100",
       iconColor: "text-rose-500",

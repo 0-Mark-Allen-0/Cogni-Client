@@ -78,33 +78,31 @@ import React from "react";
 
 const sections = [
   {
-    title: "Clinical Excellence",
+    title: "Clinical Accuracy",
     description:
-      "Ensure high-fidelity, evidence-based simulations that improve real-world medical skills.",
+      "Evidence-based Simulations, built to strengthen real-world medical skills.",
     imageUrl: "/med_sim.jpg",
   },
   {
-    title: "Optimized Learning",
-    description:
-      "Use AI-driven personalization to adapt training to individual needs and skill levels.",
+    title: "Personalised Growth",
+    description: "Our AI that adapts to match every learner’s specific needs.",
     imageUrl: "/optimized_learn.jpg",
   },
   {
-    title: "Global Accessibility",
-    description:
-      "Provide scalable and accessible medical training to professionals worldwide.",
+    title: "Global Reach",
+    description: "High-fidelity medical training for professionals everywhere.",
     imageUrl: "/med_edu.jpg",
   },
   {
-    title: "Next-Gen Innovation",
+    title: "Consistent Innovation",
     description:
-      "Continuously push the boundaries of AR/VR technology to revolutionize medical education.",
+      "Evolving AR/VR tools to keep learning effective and relevant.",
     imageUrl: "/vr_edu.jpg",
   },
   {
-    title: "Immersive Collaboration",
+    title: "Collaborative Training",
     description:
-      "Enable teamwork and realistic scenarios to train professionals in effective decision-making.",
+      "Group scenarios that build teamwork and coordinated decision-making.",
     imageUrl: "/collab.jpg",
   },
 ];

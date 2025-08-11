@@ -24,8 +24,8 @@ const WhyChooseVr = () => {
               </div>
               <h3 className="text-xl font-semibold mb-3">Real-time Practice</h3>
               <p className="text-gray-600">
-                Experience clinical scenarios with expected moments and critical
-                situations.
+                Step into realistic scenarios, from routine clinical procedures
+                to critical situations.
               </p>
             </div>
 
@@ -36,8 +36,8 @@ const WhyChooseVr = () => {
               </div>
               <h3 className="text-xl font-semibold mb-3">Boost Confidence</h3>
               <p className="text-gray-600">
-                Practice critical experiences repeatedly to build reporting
-                confidence.
+                Refine skills with repeated practice until they feel
+                instinctive.
               </p>
             </div>
 
@@ -50,7 +50,7 @@ const WhyChooseVr = () => {
                 Pressure-free Learning
               </h3>
               <p className="text-gray-600">
-                Learn at your own pace in a safe, pressure-free environment.
+                Progress at your own pace in a calm, risk-free setting.
               </p>
             </div>
 
@@ -59,10 +59,11 @@ const WhyChooseVr = () => {
               <div className="w-14 h-14 bg-[#07ECC6]/10 rounded-lg flex items-center justify-center mb-4">
                 <Globe className="text-[#07ECC6] w-8 h-8" />
               </div>
-              <h3 className="text-xl font-semibold mb-3">Global Access</h3>
+              <h3 className="text-xl font-semibold mb-3">
+                Accessible Anywhere
+              </h3>
               <p className="text-gray-600">
-                Access training modules without geographical or time
-                constraints.
+                Train anytime, without limits of place or schedule.
               </p>
             </div>
           </div>
