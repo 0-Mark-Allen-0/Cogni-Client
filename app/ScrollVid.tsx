@@ -1442,22 +1442,18 @@
 
 import React, { Suspense, useEffect, useRef, useState } from "react";
 import { Canvas, useFrame, useThree } from "@react-three/fiber";
-import { useGLTF } from "@react-three/drei";
+import { useGLTF, useProgress } from "@react-three/drei";
+import { Loader2, ChevronDown } from "lucide-react";
 import * as THREE from "three";
 
 const VIDEO_SRC =
   "https://github.com/0-Mark-Allen-0/Cogni-Client/releases/download/Asset/landing_video.mp4";
 
-const MODEL_SRC =
-  "https://github.com/0-Mark-Allen-0/Cogni-Client/releases/download/Asset/Quest3.glb";
-
-/* ---------- Model ---------- */
 const Model: React.FC = () => {
-  const { scene } = useGLTF(MODEL_SRC);
+  const { scene } = useGLTF("/models/Quest3.glb");
   return <primitive object={scene} scale={1.5} />;
 };
 
-/* ---------- Camera path generation ---------- */
 const createCameraPath = () => {
   const points: Array<{
     position: [number, number, number];
@@ -1512,7 +1508,6 @@ const createCameraPath = () => {
   return points;
 };
 
-/* ---------- Camera controller ---------- */
 const CameraController = ({
   animationProgress,
 }: {
@@ -1536,7 +1531,6 @@ const CameraController = ({
   return null;
 };
 
-/* ---------- Mobile detection ---------- */
 const useIsMobile = () => {
   const [isMobile, setIsMobile] = useState(false);
   useEffect(() => {
@@ -1548,7 +1542,6 @@ const useIsMobile = () => {
   return isMobile;
 };
 
-/* ----------------- Main component ----------------- */
 export default function VRHeadsetViewer() {
   const [showIntro, setShowIntro] = useState(true);
   const [animationStarted, setAnimationStarted] = useState(false);
@@ -1567,10 +1560,16 @@ export default function VRHeadsetViewer() {
 
   const videoRef = useRef<HTMLVideoElement | null>(null);
 
+  // Use drei's useProgress to track model loading progress
+  const { active, progress } = useProgress();
+
   /* Interaction trigger */
   useEffect(() => {
     const handleInteraction = () => {
       if (!showIntro) return;
+      // Only allow interaction after model is loaded
+      if (active) return; // still loading, ignore interaction
+
       setShowIntro(false);
       setTimeout(() => {
         setAnimationStarted(true);
@@ -1583,7 +1582,7 @@ export default function VRHeadsetViewer() {
       window.removeEventListener("wheel", handleInteraction);
       window.removeEventListener("touchstart", handleInteraction);
     };
-  }, [showIntro]);
+  }, [showIntro, active]);
 
   /* Animation loop (updates zoomProgress & fade) */
   useEffect(() => {
@@ -1625,8 +1624,6 @@ export default function VRHeadsetViewer() {
 
   /* Reveal video container once zoom threshold reached (order-resilient) */
   useEffect(() => {
-    // debug:
-    // console.log({ zoomProgress, showVideo, videoCanPlay });
     if (!showVideo && zoomProgress >= 0.6) {
       setShowVideo(true);
     }
@@ -1645,20 +1642,16 @@ export default function VRHeadsetViewer() {
     }
   }, [showVideo, videoCanPlay]);
 
-  /* Preload video as early as possible once mounted (so GitHub-release/R2 request starts) */
+  /* Preload video as early as possible once mounted */
   useEffect(() => {
     const el = videoRef.current;
     if (el) {
       try {
-        // load() signals browser to start fetching (useful if preload behavior is conservative)
         el.load();
-      } catch (e) {
-        // ignore
-      }
+      } catch (e) {}
     }
   }, []);
 
-  /* ---------- markup ---------- */
   return (
     <div className="relative w-full h-screen overflow-hidden bg-white">
       {/* 3D Scene - hidden once showVideo true */}
@@ -1685,9 +1678,9 @@ export default function VRHeadsetViewer() {
         </Canvas>
       )}
 
-      {/* Intro overlay */}
+      {/* Intro / Loading overlay */}
       {showIntro && (
-        <div className="absolute inset-0 flex flex-col justify-center items-center bg-gradient-to-br from-gray-900 via-gray-800 to-black z-40 px-4 transition-opacity">
+        <div className="absolute inset-0 flex flex-col justify-center items-center bg-gradient-to-br from-gray-900 via-gray-800 to-black z-40 px-4 transition-opacity select-none">
           <div className="absolute -rotate-45 -right-20 top-20 w-96 h-96 bg-[#24ffe9]/20 rounded-full blur-3xl" />
           <div className="absolute rotate-12 -left-20 bottom-20 w-96 h-96 bg-[#00a8c9]/20 rounded-full blur-3xl" />
           <div className="absolute rotate-45 left-40 top-20 w-64 h-64 bg-[#4f46e5]/15 rounded-full blur-3xl" />
@@ -1695,17 +1688,38 @@ export default function VRHeadsetViewer() {
 
           <div className="text-center z-50 max-w-4xl mx-auto">
             <h1 className="text-4xl md:text-6xl font-bold text-white mb-4 md:mb-6 tracking-tight">
-              Enter the World of VR
+              {active ? "Loading" : "Enter the World of VR"}
             </h1>
             <p className="text-lg md:text-xl text-white mb-8 md:mb-12 font-light">
-              <span className="hidden md:inline">
-                Scroll to begin your journey
-              </span>
-              <span className="md:hidden">
-                Rotate your screen, and touch to begin your journey!
-              </span>
+              {active ? (
+                // Show loading progress percent while active
+                <span>{Math.floor(progress)}%</span>
+              ) : (
+                <>
+                  <span className="hidden md:inline">
+                    Scroll to begin your journey
+                  </span>
+                  <span className="md:hidden">
+                    Rotate your screen, and touch to begin your journey!
+                  </span>
+                </>
+              )}
             </p>
-            <div className="animate-bounce text-white">↓</div>
+            <div className="text-white">
+              {active ? (
+                <Loader2
+                  className="mx-auto animate-spin"
+                  size={48}
+                  aria-label="Loading spinner"
+                />
+              ) : (
+                <ChevronDown
+                  className="mx-auto animate-bounce"
+                  size={48}
+                  aria-label="Scroll down arrow"
+                />
+              )}
+            </div>
           </div>
         </div>
       )}
@@ -1729,11 +1743,9 @@ export default function VRHeadsetViewer() {
           muted
           loop
           onCanPlay={() => {
-            // the browser reports it can start playback
             setVideoCanPlay(true);
           }}
           onCanPlayThrough={() => {
-            // even better signal for large files
             setVideoCanPlay(true);
           }}
           onError={(e) => {
@@ -1741,12 +1753,11 @@ export default function VRHeadsetViewer() {
           }}
           style={{ width: "100%", height: "100%", objectFit: "cover" }}
         />
-        {/* Play button fallback if autoplay blocked */}
         {showVideo && playFailed && (
           <button
             onClick={() => {
               if (!videoRef.current) return;
-              videoRef.current.muted = false; // optional: unmute on user click if desired
+              videoRef.current.muted = false;
               videoRef.current
                 .play()
                 .catch((e) => console.warn("Play failed", e));
