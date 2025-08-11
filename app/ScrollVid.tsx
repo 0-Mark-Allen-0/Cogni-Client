@@ -1437,8 +1437,7 @@
 //   );
 // }
 
-//v4 -YT iFrame Loader
-"use client";
+//v4 - GitHub Release Host
 "use client";
 
 import React, { Suspense, useEffect, useRef, useState } from "react";
@@ -1446,24 +1445,19 @@ import { Canvas, useFrame, useThree } from "@react-three/fiber";
 import { useGLTF } from "@react-three/drei";
 import * as THREE from "three";
 
-/* ------------------------
-   Replace this URL with:
-   - GitHub Release URL:
-     https://github.com/OWNER/REPO/releases/download/TAG/hero.mp4
-   OR
-   - Cloudflare R2 public/custom domain URL:
-     https://media.yourdomain.com/hero.mp4
-   ------------------------ */
 const VIDEO_SRC =
   "https://github.com/0-Mark-Allen-0/Cogni-Client/releases/download/Asset/landing_video.mp4";
 
+const MODEL_SRC =
+  "https://github.com/0-Mark-Allen-0/Cogni-Client/releases/download/Asset/Quest3.glb";
+
 /* ---------- Model ---------- */
 const Model: React.FC = () => {
-  const { scene } = useGLTF("/models/Quest3.glb");
+  const { scene } = useGLTF(MODEL_SRC);
   return <primitive object={scene} scale={1.5} />;
 };
 
-/* ---------- Camera path generation (same as yours) ---------- */
+/* ---------- Camera path generation ---------- */
 const createCameraPath = () => {
   const points: Array<{
     position: [number, number, number];
