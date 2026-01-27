@@ -76,6 +76,15 @@ export default function Header() {
             >
               Contact
             </Link>
+
+            <Link
+              href="https://halaraxr.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-gray-200 hover:text-white font-semibold"
+            >
+              HalaraXR
+            </Link>
           </div>
 
           {/* Mobile Menu Button */}
@@ -148,6 +157,13 @@ export default function Header() {
               onClick={() => setIsMenuOpen(false)}
             >
               Contact
+            </Link>
+            <Link
+              href="https://halaraxr.com"
+              className="text-gray-200 hover:text-white font-semibold"
+              onClick={() => setIsMenuOpen(false)}
+            >
+              HalaraXR
             </Link>
           </div>
         )}

@@ -10,9 +10,11 @@ export default function Google() {
     setLoading(true);
 
     const formData = new FormData(e.currentTarget);
-    const formURL =
-      "https://docs.google.com/forms/u/0/d/e/1FAIpQLSf0jKuHnU8vrtJ5JCtvr47rYvMCtf7zgcN3Xwcl0Ohi9g_5nw/formResponse";
+    // const formURL =
+    //   "https://docs.google.com/forms/u/0/d/e/1FAIpQLSf0jKuHnU8vrtJ5JCtvr47rYvMCtf7zgcN3Xwcl0Ohi9g_5nw/formResponse";
 
+    const formURL =
+      "https://docs.google.com/forms/d/e/1FAIpQLSfqMhHaeDVPU_vnj4G0Bx-cC6nu6IH_cP1PMCm9Gt29jsUXLQ/formResponse";
     try {
       await fetch(formURL, {
         method: "POST",
@@ -64,7 +66,8 @@ export default function Google() {
                     <input
                       id="name"
                       type="text"
-                      name="entry.1296788053"
+                      // name="entry.1296788053"
+                      name="entry.299613777"
                       className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent"
                       required
                     />
@@ -79,7 +82,8 @@ export default function Google() {
                     <input
                       id="email"
                       type="email"
-                      name="entry.891960373"
+                      // name="entry.891960373"
+                      name="entry.1544945603"
                       className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent"
                       required
                     />
@@ -93,7 +97,8 @@ export default function Google() {
                     </label>
                     <textarea
                       id="message"
-                      name="entry.1752009515"
+                      // name="entry.1752009515"
+                      name="entry.1919561868"
                       rows={4}
                       className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent"
                       required
